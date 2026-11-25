@@ -1,0 +1,200 @@
+26/11/25 04:12:54 INFO SparkEnv: Registering MapOutputTracker
+26/11/25 04:12:54 INFO SparkEnv: Registering BlockManagerMaster
+26/11/25 04:12:54 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/11/25 04:12:54 INFO SparkEnv: Registering OutputCommitCoordinator
+26/11/25 04:12:55 INFO MetricsConfig: Loaded properties from hadoop-metrics2.properties
+26/11/25 04:12:55 INFO MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+26/11/25 04:12:55 INFO MetricsSystemImpl: google-hadoop-file-system metrics system started
+26/11/25 04:12:55 INFO DataprocSparkPlugin: Registered 202 driver metrics
+26/11/25 04:12:56 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at epi-cluster-m.southamerica-east1-b.c.cdc-big-data-analitica-2026.internal./10.158.0.3:8032
+26/11/25 04:12:56 INFO AHSProxy: Connecting to Application History server at epi-cluster-m.southamerica-east1-b.c.cdc-big-data-analitica-2026.internal./10.158.0.3:10200
+26/11/25 04:12:57 INFO Configuration: resource-types.xml not found
+26/11/25 04:12:57 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+26/11/25 04:12:58 INFO YarnClientImpl: Submitted application application_1795579107344_0001
+26/11/25 04:12:59 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at epi-cluster-m.southamerica-east1-b.c.cdc-big-data-analitica-2026.internal./10.158.0.3:8030
+26/11/25 04:13:01 INFO GhfsGlobalStorageStatistics: periodic connector metrics: {gcs_api_client_non_found_response_count=1, gcs_api_client_side_error_count=1, gcs_api_time=369, gcs_api_total_request_count=2, gcs_connector_time=568, gcs_list_file_request=1, gcs_list_file_request_duration=182, gcs_list_file_request_max=182, gcs_list_file_request_mean=182, gcs_list_file_request_min=182, gcs_metadata_request=1, gcs_metadata_request_duration=187, gcs_metadata_request_max=187, gcs_metadata_request_mean=187, gcs_metadata_request_min=187, gs_filesystem_create=3, gs_filesystem_initialize=2, op_get_file_status=1, op_get_file_status_duration=568, op_get_file_status_max=568, op_get_file_status_mean=568, op_get_file_status_min=568, uptimeSeconds=5} [CONTEXT ratelimit_period="5 MINUTES" ]
+26/11/25 04:13:01 INFO GoogleCloudStorageImpl: Ignoring exception of type GoogleJsonResponseException; verified object already exists with desired state.
+26/11/25 04:13:02 INFO GoogleHadoopOutputStream: hflush(): No-op due to rate limit (RateLimiter[stableRate=0.2qps]): readers will *not* yet see flushed data for gs://dataproc-temp-sa-east1-686980803859-bl4wrqiu/627416ed-ff35-48f4-81a3-c5379bad298f/spark-job-history/application_1795579107344_0001.inprogress [CONTEXT ratelimit_period="1 MINUTES" ]
+spark master: yarn
+version     : 3.5.3
+
+===== FUENTE DENGUE =====
+ruta       : gs://cdc-epi-lake-2026/raw/dengue/*
+separador  : ;
+encoding   : UTF-8
+columnas   : 14
+filas      : 1029421
+--- esquema ---
+root
+ |-- departamento: string (nullable = true)
+ |-- provincia: string (nullable = true)
+ |-- distrito: string (nullable = true)
+ |-- localidad: string (nullable = true)
+ |-- enfermedad: string (nullable = true)
+ |-- ano: string (nullable = true)
+ |-- semana: string (nullable = true)
+ |-- diagnostic: string (nullable = true)
+ |-- diresa: string (nullable = true)
+ |-- ubigeo: string (nullable = true)
+ |-- localcod: string (nullable = true)
+ |-- edad: string (nullable = true)
+ |-- tipo_edad: string (nullable = true)
+ |-- sexo: string (nullable = true)
+
+--- 5 primeras filas ---
++------------+-------------+----------+-----------------+--------------------+----+------+----------+------+------+--------+----+---------+----+
+|departamento|    provincia|  distrito|        localidad|          enfermedad| ano|semana|diagnostic|diresa|ubigeo|localcod|edad|tipo_edad|sexo|
++------------+-------------+----------+-----------------+--------------------+----+------+----------+------+------+--------+----+---------+----+
+|      LORETO|ALTO AMAZONAS|YURIMAGUAS|           000101|DENGUE SIN SIGNOS...|2000|     1|     A97.0|    16|160201|    NULL|  58|        A|   M|
+|      LORETO|ALTO AMAZONAS|YURIMAGUAS|           000101|DENGUE SIN SIGNOS...|2000|     1|     A97.0|    16|160201|    NULL|  44|        A|   F|
+|      LORETO|ALTO AMAZONAS|YURIMAGUAS|BARRIO MORALILLOS|DENGUE SIN SIGNOS...|2000|     1|     A97.0|    16|160201|    NULL|  21|        A|   F|
+|      LORETO|       MAYNAS|   IQUITOS|           005902|DENGUE SIN SIGNOS...|2000|     1|     A97.0|    16|160101|    NULL|  74|        A|   M|
+|      LORETO|       MAYNAS|   IQUITOS|          CARDOZO|DENGUE SIN SIGNOS...|2000|     1|     A97.0|    16|160101|    NULL|  42|        A|   F|
++------------+-------------+----------+-----------------+--------------------+----+------+----------+------+------+--------+----+---------+----+
+only showing top 5 rows
+
+--- nulos en llaves ---
++------------+---------+------------+
+|nulos_ubigeo|nulos_ano|nulos_semana|
++------------+---------+------------+
+|           0|        0|           0|
++------------+---------+------------+
+
++-------+-------+
+|ano_min|ano_max|
++-------+-------+
+|   2000|   2024|
++-------+-------+
+
++----------+----------+
+|semana_min|semana_max|
++----------+----------+
+|         1|        53|
++----------+----------+
+
+duplicados exactos: 152091
+filas unicas      : 877330
+
+===== FUENTE CARRION =====
+ruta       : gs://cdc-epi-lake-2026/raw/carrion/*
+separador  : ,
+encoding   : UTF-8
+columnas   : 14
+filas      : 46120
+--- esquema ---
+root
+ |-- departamento: string (nullable = true)
+ |-- provincia: string (nullable = true)
+ |-- distrito: string (nullable = true)
+ |-- localidad: string (nullable = true)
+ |-- enfermedad: string (nullable = true)
+ |-- ano: string (nullable = true)
+ |-- semana: string (nullable = true)
+ |-- diagnostic: string (nullable = true)
+ |-- diresa: string (nullable = true)
+ |-- ubigeo: string (nullable = true)
+ |-- localcod: string (nullable = true)
+ |-- edad: string (nullable = true)
+ |-- tipo_edad: string (nullable = true)
+ |-- sexo: string (nullable = true)
+
+--- 5 primeras filas ---
++------------+---------+--------+---------+--------------------+----+------+----------+------+------+--------+----+---------+----+
+|departamento|provincia|distrito|localidad|          enfermedad| ano|semana|diagnostic|diresa|ubigeo|localcod|edad|tipo_edad|sexo|
++------------+---------+--------+---------+--------------------+----+------+----------+------+------+--------+----+---------+----+
+|      ANCASH|   HUARAZ|  HUARAZ|   HUARAZ|ENFERMEDAD DE CAR...|2000|    31|     A44.0|    02|020101|    NULL|  19|        A|   M|
+|        LIMA|   HUARAL|  IHUARI|   YUNGUY|ENFERMEDAD DE CAR...|2000|     4|     A44.0|    42|150606|    NULL|  33|        A|   M|
+|        LIMA|   HUARAL|  IHUARI|   YUNGUY|ENFERMEDAD DE CAR...|2000|     8|     A44.0|    42|150606|    NULL|   4|        A|   F|
+|        LIMA|   HUARAL|  IHUARI|   YUNGUY|ENFERMEDAD DE CAR...|2000|    10|     A44.0|    42|150606|    NULL|  12|        A|   F|
+|        LIMA|   HUARAL|  IHUARI|   MATARA|ENFERMEDAD DE CAR...|2000|    16|     A44.0|    42|150606|    NULL|   5|        A|   M|
++------------+---------+--------+---------+--------------------+----+------+----------+------+------+--------+----+---------+----+
+only showing top 5 rows
+
+--- nulos en llaves ---
++------------+---------+------------+
+|nulos_ubigeo|nulos_ano|nulos_semana|
++------------+---------+------------+
+|           0|        0|           0|
++------------+---------+------------+
+
++-------+-------+
+|ano_min|ano_max|
++-------+-------+
+|   2000|   2024|
++-------+-------+
+
++----------+----------+
+|semana_min|semana_max|
++----------+----------+
+|         1|        53|
++----------+----------+
+
+duplicados exactos: 716
+filas unicas      : 45404
+
+===== FUENTE IPRESS =====
+ruta       : gs://cdc-epi-lake-2026/raw/ipress/*
+separador  : ,
+encoding   : ISO-8859-1
+columnas   : 33
+filas      : 20819
+--- esquema ---
+root
+ |-- Institución: string (nullable = true)
+ |-- Código Único: string (nullable = true)
+ |-- Nombre del establecimiento: string (nullable = true)
+ |-- Clasificación: string (nullable = true)
+ |-- Tipo: string (nullable = true)
+ |-- Departamento: string (nullable = true)
+ |-- Provincia: string (nullable = true)
+ |-- Distrito: string (nullable = true)
+ |-- UBIGEO: string (nullable = true)
+ |-- Dirección: string (nullable = true)
+ |-- Código DISA: string (nullable = true)
+ |-- Código Red: string (nullable = true)
+ |-- Código Microrred: string (nullable = true)
+ |-- DISA: string (nullable = true)
+ |-- Red: string (nullable = true)
+ |-- Microrred: string (nullable = true)
+ |-- Código UE: string (nullable = true)
+ |-- Unidad Ejecutora: string (nullable = true)
+ |-- Categoria: string (nullable = true)
+ |-- Teléfono: string (nullable = true)
+ |-- Tipo Doc.Categorización: string (nullable = true)
+ |-- Nro.Doc.Categorización: string (nullable = true)
+ |-- Horario: string (nullable = true)
+ |-- Inicio de Actividad: string (nullable = true)
+ |-- Director Médico y/o Responsable de la Atención de Salud: string (nullable = true)
+ |-- Estado: string (nullable = true)
+ |-- Situación: string (nullable = true)
+ |-- Condición: string (nullable = true)
+ |-- Inspección: string (nullable = true)
+ |-- NORTE: string (nullable = true)
+ |-- ESTE: string (nullable = true)
+ |-- COTA: string (nullable = true)
+ |-- CAMAS: string (nullable = true)
+
+--- 5 primeras filas ---
+26/11/25 04:13:38 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
++-----------------+------------+--------------------------+--------------------+--------------------+------------+---------+-----------------+------+--------------------+-----------+----------+----------------+---------+--------------------+--------------------+---------+--------------------+-------------+--------------------+-----------------------+----------------------+--------------------+-------------------+-------------------------------------------------------+--------+---------+-----------------+----------+------------+-----------+----+-----+
+|      Institución|Código Único|Nombre del establecimiento|       Clasificación|                Tipo|Departamento|Provincia|         Distrito|UBIGEO|           Dirección|Código DISA|Código Red|Código Microrred|     DISA|                 Red|           Microrred|Código UE|    Unidad Ejecutora|    Categoria|            Teléfono|Tipo Doc.Categorización|Nro.Doc.Categorización|             Horario|Inicio de Actividad|Director Médico y/o Responsable de la Atención de Salud|  Estado|Situación|        Condición|Inspección|       NORTE|       ESTE|COTA|CAMAS|
++-----------------+------------+--------------------------+--------------------+--------------------+------------+---------+-----------------+------+--------------------+-----------+----------+----------------+---------+--------------------+--------------------+---------+--------------------+-------------+--------------------+-----------------------+----------------------+--------------------+-------------------+-------------------------------------------------------+--------+---------+-----------------+----------+------------+-----------+----+-----+
+|          PRIVADO|    00016618|                SONRIE MAS|CONSULTORIOS MEDI...|ESTABLECIMIENTO D...|        LIMA|     LIMA|SANTIAGO DE SURCO|150140|AV. CAMINOS DEL I...|         23|        00|              00| LIMA SUR|                    |NO PERTENECE A NI...|        0|                    |          I-1|             7197812|             RESOLUCIÓN|                  NULL|9:00 - 21:00 DE LUNE|         11/03/2013|                                   GILBERTO MARTIN A...|ACTIVADO|         |EN FUNCIONAMIENTO|          |        NULL|       NULL|NULL| NULL|
+|GOBIERNO REGIONAL|    00007050|                    AMBATO|PUESTOS DE SALUD ...|ESTABLECIMIENTO D...|   CAJAMARCA|  CUTERVO|       SANTA CRUZ|060611| COMUNIDAD DE AMBATO|          7|        13|              03|CAJAMARCA|             CUTERVO|              CHIPLE|      787|REGION CAJAMARCA-...|          I-1|NO CUENTA CON TEL...|             RESOLUCIÓN|  0150 GR.CAJ/DRSC-...|        8:00 - 14:00|         29/06/2006|                                   IDELSO MENOR CHAVEZ |ACTIVADO|         |EN FUNCIONAMIENTO|          |-78.85838013| -6.1335228|1724| NULL|
+|GOBIERNO REGIONAL|    00000099|      SANTA ISABEL DE Y...|PUESTOS DE SALUD ...|ESTABLECIMIENTO D...|      LORETO|   LORETO|         PARINARI|160302|          ACTUALIZAR|         24|        08|              01|   LORETO|              LORETO|               NAUTA|      870|        SALUD LORETO|          I-1|          ACTUALIZAR|             RESOLUCIÓN|                  NULL|          ACTUALIZAR|         01/01/1900|                                   JULIO TONY CAITIM...|ACTIVADO|         |EN FUNCIONAMIENTO|          |-74.25813893|-4.58150907| 124| NULL|
+|          PRIVADO|    00019555|              DENTOCAPLINA|CONSULTORIOS MEDI...|ESTABLECIMIENTO D...|       TACNA|    TACNA|            TACNA|230101|      AV.LEGUIA 1892|         32|        00|              00|    TACNA|                    |NO PERTENECE A NI...|        0|                    |Sin Categoría|            52631048|             RESOLUCIÓN|                  NULL|9:30-20:00 LUNES-SAB|         30/12/2014|                                   BYANCA LISSETTE A...|ACTIVADO|         |EN FUNCIONAMIENTO|          |        NULL|       NULL|NULL| NULL|
+|             OTRO|    00018792|      MEDICO DE FAMILIA...|PUESTOS DE SALUD ...|ESTABLECIMIENTO D...|       JUNIN|    TARMA|            TARMA|120701|JR. ROSA ZAPATEL ...|         17|        00|              00|    JUNIN|NO PERTENECE A NI...|NO PERTENECE A NI...|        0|                    |          I-2|            NO TIENE|             RESOLUCIÓN|                  NULL|            24 HORAS|         06/07/2014|                                   LILIAN DENISE ADA...|ACTIVADO|         |EN FUNCIONAMIENTO|          |        NULL|       NULL|NULL| NULL|
++-----------------+------------+--------------------------+--------------------+--------------------+------------+---------+-----------------+------+--------------------+-----------+----------+----------------+---------+--------------------+--------------------+---------+--------------------+-------------+--------------------+-----------------------+----------------------+--------------------+-------------------+-------------------------------------------------------+--------+---------+-----------------+----------+------------+-----------+----+-----+
+only showing top 5 rows
+
+--- nulos en llaves ---
++------------+
+|nulos_UBIGEO|
++------------+
+|           1|
++------------+
+
+duplicados exactos: 14
+filas unicas      : 20805
+
+FIN 01_explore: perfilado completo, sin transformacion de datos
