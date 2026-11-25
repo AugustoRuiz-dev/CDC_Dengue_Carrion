@@ -1,1 +1,109 @@
--- pendiente de ejecucion -- 
+26/11/25 21:23:02 INFO SparkEnv: Registering MapOutputTracker
+26/11/25 21:23:02 INFO SparkEnv: Registering BlockManagerMaster
+26/11/25 21:23:02 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/11/25 21:23:03 INFO SparkEnv: Registering OutputCommitCoordinator
+26/11/25 21:23:03 INFO MetricsConfig: Loaded properties from hadoop-metrics2.properties
+26/11/25 21:23:03 INFO MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+26/11/25 21:23:03 INFO MetricsSystemImpl: google-hadoop-file-system metrics system started
+26/11/25 21:23:04 INFO DataprocSparkPlugin: Registered 202 driver metrics
+26/11/25 21:23:04 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at epi-cluster-m.southamerica-east1-b.c.cdc-big-data-analitica-2026.internal./10.158.0.3:8032
+26/11/25 21:23:04 INFO AHSProxy: Connecting to Application History server at epi-cluster-m.southamerica-east1-b.c.cdc-big-data-analitica-2026.internal./10.158.0.3:10200
+26/11/25 21:23:05 INFO Configuration: resource-types.xml not found
+26/11/25 21:23:05 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+26/11/25 21:23:06 INFO YarnClientImpl: Submitted application application_1795579107344_0003
+26/11/25 21:23:07 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at epi-cluster-m.southamerica-east1-b.c.cdc-big-data-analitica-2026.internal./10.158.0.3:8030
+26/11/25 21:23:08 INFO GhfsGlobalStorageStatistics: periodic connector metrics: {gcs_api_client_non_found_response_count=1, gcs_api_client_side_error_count=1, gcs_api_time=307, gcs_api_total_request_count=2, gcs_connector_time=526, gcs_list_file_request=1, gcs_list_file_request_duration=155, gcs_list_file_request_max=155, gcs_list_file_request_mean=155, gcs_list_file_request_min=155, gcs_metadata_request=1, gcs_metadata_request_duration=152, gcs_metadata_request_max=152, gcs_metadata_request_mean=152, gcs_metadata_request_min=152, gs_filesystem_create=3, gs_filesystem_initialize=2, op_get_file_status=1, op_get_file_status_duration=526, op_get_file_status_max=526, op_get_file_status_mean=526, op_get_file_status_min=526, uptimeSeconds=5} [CONTEXT ratelimit_period="5 MINUTES" ]
+26/11/25 21:23:08 INFO GoogleCloudStorageImpl: Ignoring exception of type GoogleJsonResponseException; verified object already exists with desired state.
+26/11/25 21:23:09 INFO GoogleHadoopOutputStream: hflush(): No-op due to rate limit (RateLimiter[stableRate=0.2qps]): readers will *not* yet see flushed data for gs://dataproc-temp-sa-east1-686980803859-bl4wrqiu/627416ed-ff35-48f4-81a3-c5379bad298f/spark-job-history/application_1795579107344_0003.inprogress [CONTEXT ratelimit_period="1 MINUTES" ]
+raw dengue=1029421 carrion=46120 ipress=20819
+26/11/25 21:23:39 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+DENGUE: crudas=1029421 sin_duplicados=877330 validas=877330 rechazadas=0
+26/11/25 21:24:04 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+CARRION: crudas=46120 sin_duplicados=45404 validas=45404 rechazadas=0
+26/11/25 21:24:14 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+panel observado: 98029 filas
+ipress unicos por codigo=20792 ubigeos=1861
+26/11/25 21:24:45 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+26/11/25 21:24:45 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:24:45 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:24:45 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:24:45 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:24:45 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:24:45 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:24:45 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:24:45 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:24:45 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:24:45 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:24:45 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:24:45 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:24:46 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:24:46 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:24:46 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:24:46 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:24:46 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:24:46 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:05 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:05 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:05 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:05 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:05 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:05 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:06 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:06 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:06 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:06 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:06 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:06 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:07 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:07 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:07 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:07 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:07 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:07 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:08 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:08 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:08 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:08 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:08 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:08 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:08 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:08 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:08 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:08 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:10 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:10 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:10 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:10 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:11 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:11 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:11 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 21:25:11 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+panel final: filas=605592 con_casos=98029 ceros=507563 casos=922734
+distritos=930 semanas=1305
+filas sin IPRESS=1979
+26/11/25 21:25:25 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+FIN 02_clean: parquet en processed/epi_clean/, processed/epi_clean_bq/ y processed/ipress_dim/
