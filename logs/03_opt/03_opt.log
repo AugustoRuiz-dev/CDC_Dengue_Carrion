@@ -1,1 +1,35 @@
-﻿-- pendiente de ejecucion --
+26/11/26 00:25:40 INFO SparkEnv: Registering MapOutputTracker
+26/11/26 00:25:40 INFO SparkEnv: Registering BlockManagerMaster
+26/11/26 00:25:40 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/11/26 00:25:40 INFO SparkEnv: Registering OutputCommitCoordinator
+26/11/26 00:25:41 INFO MetricsConfig: Loaded properties from hadoop-metrics2.properties
+26/11/26 00:25:41 INFO MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+26/11/26 00:25:41 INFO MetricsSystemImpl: google-hadoop-file-system metrics system started
+26/11/26 00:25:41 INFO DataprocSparkPlugin: Registered 202 driver metrics
+26/11/26 00:25:41 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at epi-cluster-m.southamerica-east1-b.c.cdc-big-data-analitica-2026.internal./10.158.0.3:8032
+26/11/26 00:25:42 INFO AHSProxy: Connecting to Application History server at epi-cluster-m.southamerica-east1-b.c.cdc-big-data-analitica-2026.internal./10.158.0.3:10200
+26/11/26 00:25:42 INFO Configuration: resource-types.xml not found
+26/11/26 00:25:42 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+26/11/26 00:25:43 INFO YarnClientImpl: Submitted application application_1795579107344_0004
+26/11/26 00:25:44 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at epi-cluster-m.southamerica-east1-b.c.cdc-big-data-analitica-2026.internal./10.158.0.3:8030
+26/11/26 00:25:45 INFO GhfsGlobalStorageStatistics: periodic connector metrics: {gcs_api_client_non_found_response_count=1, gcs_api_client_side_error_count=1, gcs_api_time=264, gcs_api_total_request_count=2, gcs_connector_time=457, gcs_list_file_request=1, gcs_list_file_request_duration=127, gcs_list_file_request_max=127, gcs_list_file_request_mean=127, gcs_list_file_request_min=127, gcs_metadata_request=1, gcs_metadata_request_duration=137, gcs_metadata_request_max=137, gcs_metadata_request_mean=137, gcs_metadata_request_min=137, gs_filesystem_create=3, gs_filesystem_initialize=2, op_get_file_status=1, op_get_file_status_duration=457, op_get_file_status_max=457, op_get_file_status_mean=457, op_get_file_status_min=457, uptimeSeconds=4} [CONTEXT ratelimit_period="5 MINUTES" ]
+26/11/26 00:25:45 INFO GoogleCloudStorageImpl: Ignoring exception of type GoogleJsonResponseException; verified object already exists with desired state.
+26/11/26 00:25:46 INFO GoogleHadoopOutputStream: hflush(): No-op due to rate limit (RateLimiter[stableRate=0.2qps]): readers will *not* yet see flushed data for gs://dataproc-temp-sa-east1-686980803859-bl4wrqiu/627416ed-ff35-48f4-81a3-c5379bad298f/spark-job-history/application_1795579107344_0004.inprogress [CONTEXT ratelimit_period="1 MINUTES" ]
+panel filas=605592 ipress filas=20792 ubigeos=1861
+spark master=yarn version=3.5.3
+
+configuracion,filas_join,filas_salida,casos,t1_s,t2_s
+base,605592,42,922734,12.72,6.05
+26/11/26 00:26:26 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+26/11/26 00:26:26 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+cache,605592,42,922734,20.63,11.66
+26/11/26 00:26:58 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+26/11/26 00:26:58 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+cache_broadcast,605592,42,922734,10.57,6.21
+
+--- mejora frente a base en frio ---
+base: t1=12.72s mejora=0.0% t2=6.05s
+cache: t1=20.63s mejora=-62.19% t2=11.66s
+cache_broadcast: t1=10.57s mejora=16.9% t2=6.21s
+
+FIN 03_opt: comparacion base, cache y cache con broadcast
