@@ -1,0 +1,182 @@
+26/11/26 20:47:26 INFO SparkEnv: Registering MapOutputTracker
+26/11/26 20:47:26 INFO SparkEnv: Registering BlockManagerMaster
+26/11/26 20:47:27 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/11/26 20:47:27 INFO SparkEnv: Registering OutputCommitCoordinator
+26/11/26 20:47:28 INFO MetricsConfig: Loaded properties from hadoop-metrics2.properties
+26/11/26 20:47:28 INFO MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+26/11/26 20:47:28 INFO MetricsSystemImpl: google-hadoop-file-system metrics system started
+26/11/26 20:47:28 INFO DataprocSparkPlugin: Registered 202 driver metrics
+26/11/26 20:47:28 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at epi-cluster-m.southamerica-east1-b.c.cdc-big-data-analitica-2026.internal./10.158.0.3:8032
+26/11/26 20:47:28 INFO AHSProxy: Connecting to Application History server at epi-cluster-m.southamerica-east1-b.c.cdc-big-data-analitica-2026.internal./10.158.0.3:10200
+26/11/26 20:47:29 INFO Configuration: resource-types.xml not found
+26/11/26 20:47:29 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+26/11/26 20:47:30 INFO YarnClientImpl: Submitted application application_1795579107344_0008
+26/11/26 20:47:31 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at epi-cluster-m.southamerica-east1-b.c.cdc-big-data-analitica-2026.internal./10.158.0.3:8030
+26/11/26 20:47:32 INFO GhfsGlobalStorageStatistics: periodic connector metrics: {gcs_api_client_non_found_response_count=1, gcs_api_client_side_error_count=1, gcs_api_time=259, gcs_api_total_request_count=2, gcs_connector_time=430, gcs_list_file_request=1, gcs_list_file_request_duration=127, gcs_list_file_request_max=127, gcs_list_file_request_mean=127, gcs_list_file_request_min=127, gcs_metadata_request=1, gcs_metadata_request_duration=132, gcs_metadata_request_max=132, gcs_metadata_request_mean=132, gcs_metadata_request_min=132, gs_filesystem_create=3, gs_filesystem_initialize=2, op_get_file_status=1, op_get_file_status_duration=430, op_get_file_status_max=430, op_get_file_status_mean=430, op_get_file_status_min=430, uptimeSeconds=4} [CONTEXT ratelimit_period="5 MINUTES" ]
+26/11/26 20:47:32 INFO GoogleCloudStorageImpl: Ignoring exception of type GoogleJsonResponseException; verified object already exists with desired state.
+26/11/26 20:47:33 INFO GoogleHadoopOutputStream: hflush(): No-op due to rate limit (RateLimiter[stableRate=0.2qps]): readers will *not* yet see flushed data for gs://dataproc-temp-sa-east1-686980803859-bl4wrqiu/627416ed-ff35-48f4-81a3-c5379bad298f/spark-job-history/application_1795579107344_0008.inprogress [CONTEXT ratelimit_period="1 MINUTES" ]
+26/11/26 20:47:43 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+panel filas=605592 distritos=930
+26/11/26 20:47:54 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+
+===== HORIZONTE t+1 =====
+filas entrenamiento=524179 validacion=55099 prueba=21371
+26/11/26 20:48:45 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+26/11/26 20:48:56 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+26/11/26 20:48:56 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+26/11/26 20:48:56 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+26/11/26 20:48:56 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+26/11/26 20:48:56 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+persistencia         validacion  mae=2.4657
+persistencia         prueba      mae=4.4272
+estacional           validacion  mae=4.9217
+estacional           prueba      mae=14.4435
+26/11/26 20:49:17 WARN Instrumentation: [a482c8e8] regParam is zero, which might cause numerical instability and overfitting.
+lineal_base          validacion  mae=2.4914 rmse=10.4330 16.1s
+26/11/26 20:49:36 WARN Instrumentation: [ae1e3cba] regParam is zero, which might cause numerical instability and overfitting.
+lineal_ampliada      validacion  mae=1.8286 rmse=6.7706 11.6s
+26/11/26 20:49:50 ERROR Instrumentation: java.lang.IllegalArgumentException: requirement failed: DecisionTree requires maxBins (= 16) to be at least as large as the number of values in each categorical feature, but categorical feature 12 has 23 values. Consider removing this and other categorical features with a large number of values, or add more training examples.
+	at scala.Predef$.require(Predef.scala:281)
+	at org.apache.spark.ml.tree.impl.DecisionTreeMetadata$.buildMetadata(DecisionTreeMetadata.scala:151)
+	at org.apache.spark.ml.tree.impl.RandomForest$.run(RandomForest.scala:274)
+	at org.apache.spark.ml.regression.RandomForestRegressor.$anonfun$train$1(RandomForestRegressor.scala:158)
+	at org.apache.spark.ml.util.Instrumentation$.$anonfun$instrumented$1(Instrumentation.scala:191)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.ml.util.Instrumentation$.instrumented(Instrumentation.scala:191)
+	at org.apache.spark.ml.regression.RandomForestRegressor.train(RandomForestRegressor.scala:136)
+	at org.apache.spark.ml.regression.RandomForestRegressor.train(RandomForestRegressor.scala:45)
+	at org.apache.spark.ml.Predictor.fit(Predictor.scala:114)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+random_forest: no se pudo entrenar (requirement failed: DecisionTree requires maxBins (= 16) to be at least as large as the number of values in each categorical feature, but categorical feature 12 has 23 values. Consider removing this and other categorical features with a large number of values, or add more training examples.)
+26/11/26 20:49:53 ERROR Instrumentation: java.lang.IllegalArgumentException: requirement failed: DecisionTree requires maxBins (= 16) to be at least as large as the number of values in each categorical feature, but categorical feature 12 has 23 values. Consider removing this and other categorical features with a large number of values, or add more training examples.
+	at scala.Predef$.require(Predef.scala:281)
+	at org.apache.spark.ml.tree.impl.DecisionTreeMetadata$.buildMetadata(DecisionTreeMetadata.scala:151)
+	at org.apache.spark.ml.tree.impl.GradientBoostedTrees$.boost(GradientBoostedTrees.scala:333)
+	at org.apache.spark.ml.tree.impl.GradientBoostedTrees$.run(GradientBoostedTrees.scala:56)
+	at org.apache.spark.ml.regression.GBTRegressor.$anonfun$train$1(GBTRegressor.scala:190)
+	at org.apache.spark.ml.util.Instrumentation$.$anonfun$instrumented$1(Instrumentation.scala:191)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.ml.util.Instrumentation$.instrumented(Instrumentation.scala:191)
+	at org.apache.spark.ml.regression.GBTRegressor.train(GBTRegressor.scala:167)
+	at org.apache.spark.ml.regression.GBTRegressor.train(GBTRegressor.scala:57)
+	at org.apache.spark.ml.Predictor.fit(Predictor.scala:114)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+gradient_boosting: no se pudo entrenar (requirement failed: DecisionTree requires maxBins (= 16) to be at least as large as the number of values in each categorical feature, but categorical feature 12 has 23 values. Consider removing this and other categorical features with a large number of values, or add more training examples.)
+modelo elegido t+1: lineal_ampliada
+lineal_ampliada      prueba      mae=2.9122
+persistencia         prueba      mae=4.4272
+estacional           prueba      mae=14.4435
+lineal_base          prueba      mae=4.1937
+mejora vs persistencia: 34.22%
+mejora vs lineal_base: 30.56%
+
+===== HORIZONTE t+2 =====
+filas entrenamiento=523317 validacion=55030 prueba=21354
+26/11/26 20:51:11 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+26/11/26 20:51:18 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+26/11/26 20:51:18 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+26/11/26 20:51:18 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+26/11/26 20:51:18 WARN SimpleTableFunctionRegistry: The function read_files replaced a previously registered function.
+persistencia         validacion  mae=3.0413
+persistencia         prueba      mae=5.8744
+estacional           validacion  mae=4.9184
+estacional           prueba      mae=14.9436
+26/11/26 20:51:34 WARN Instrumentation: [806c145a] regParam is zero, which might cause numerical instability and overfitting.
+lineal_base          validacion  mae=2.9760 rmse=13.8129 10.4s
+26/11/26 20:51:48 WARN Instrumentation: [f644e4b3] regParam is zero, which might cause numerical instability and overfitting.
+lineal_ampliada      validacion  mae=2.4214 rmse=10.2758 10.2s
+26/11/26 20:52:00 ERROR Instrumentation: java.lang.IllegalArgumentException: requirement failed: DecisionTree requires maxBins (= 16) to be at least as large as the number of values in each categorical feature, but categorical feature 12 has 23 values. Consider removing this and other categorical features with a large number of values, or add more training examples.
+	at scala.Predef$.require(Predef.scala:281)
+	at org.apache.spark.ml.tree.impl.DecisionTreeMetadata$.buildMetadata(DecisionTreeMetadata.scala:151)
+	at org.apache.spark.ml.tree.impl.RandomForest$.run(RandomForest.scala:274)
+	at org.apache.spark.ml.regression.RandomForestRegressor.$anonfun$train$1(RandomForestRegressor.scala:158)
+	at org.apache.spark.ml.util.Instrumentation$.$anonfun$instrumented$1(Instrumentation.scala:191)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.ml.util.Instrumentation$.instrumented(Instrumentation.scala:191)
+	at org.apache.spark.ml.regression.RandomForestRegressor.train(RandomForestRegressor.scala:136)
+	at org.apache.spark.ml.regression.RandomForestRegressor.train(RandomForestRegressor.scala:45)
+	at org.apache.spark.ml.Predictor.fit(Predictor.scala:114)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+random_forest: no se pudo entrenar (requirement failed: DecisionTree requires maxBins (= 16) to be at least as large as the number of values in each categorical feature, but categorical feature 12 has 23 values. Consider removing this and other categorical features with a large number of values, or add more training examples.)
+26/11/26 20:52:03 ERROR Instrumentation: java.lang.IllegalArgumentException: requirement failed: DecisionTree requires maxBins (= 16) to be at least as large as the number of values in each categorical feature, but categorical feature 12 has 23 values. Consider removing this and other categorical features with a large number of values, or add more training examples.
+	at scala.Predef$.require(Predef.scala:281)
+	at org.apache.spark.ml.tree.impl.DecisionTreeMetadata$.buildMetadata(DecisionTreeMetadata.scala:151)
+	at org.apache.spark.ml.tree.impl.GradientBoostedTrees$.boost(GradientBoostedTrees.scala:333)
+	at org.apache.spark.ml.tree.impl.GradientBoostedTrees$.run(GradientBoostedTrees.scala:56)
+	at org.apache.spark.ml.regression.GBTRegressor.$anonfun$train$1(GBTRegressor.scala:190)
+	at org.apache.spark.ml.util.Instrumentation$.$anonfun$instrumented$1(Instrumentation.scala:191)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.ml.util.Instrumentation$.instrumented(Instrumentation.scala:191)
+	at org.apache.spark.ml.regression.GBTRegressor.train(GBTRegressor.scala:167)
+	at org.apache.spark.ml.regression.GBTRegressor.train(GBTRegressor.scala:57)
+	at org.apache.spark.ml.Predictor.fit(Predictor.scala:114)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+gradient_boosting: no se pudo entrenar (requirement failed: DecisionTree requires maxBins (= 16) to be at least as large as the number of values in each categorical feature, but categorical feature 12 has 23 values. Consider removing this and other categorical features with a large number of values, or add more training examples.)
+modelo elegido t+2: lineal_ampliada
+lineal_ampliada      prueba      mae=4.0472
+persistencia         prueba      mae=5.8744
+estacional           prueba      mae=14.9436
+lineal_base          prueba      mae=5.3473
+mejora vs persistencia: 31.10%
+mejora vs lineal_base: 24.31%
+
+--- metricas de validacion, de menor a mayor MAE ---
+t+1 lineal_ampliada      mae=1.8286 mae_pos=4.3997 rmse=6.7706
+t+1 persistencia         mae=2.4657 mae_pos=6.1524 rmse=11.2355
+t+1 lineal_base          mae=2.4914 mae_pos=5.9946 rmse=10.4330
+t+1 estacional           mae=4.9217 mae_pos=12.3383 rmse=23.2945
+t+2 lineal_ampliada      mae=2.4214 mae_pos=5.8108 rmse=10.2758
+t+2 lineal_base          mae=2.9760 mae_pos=7.1161 rmse=13.8129
+t+2 persistencia         mae=3.0413 mae_pos=7.6205 rmse=15.0056
+t+2 estacional           mae=4.9184 mae_pos=12.3334 rmse=23.2238
+
+salidas en gs://cdc-epi-lake-2026/results
+FIN 05_models: comparacion de modelos y evaluacion final
